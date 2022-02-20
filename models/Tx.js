@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tx.init({
     tx_hash: DataTypes.STRING,
+    from: DataTypes.STRING,
+    to: DataTypes.STRING,
+    value: DataTypes.STRING,
     block: DataTypes.STRING
   }, {
     sequelize,

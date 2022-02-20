@@ -37,6 +37,9 @@ const storeTx = async (tx) => {
     where: { tx_hash: tx.hash },
     defaults: {
       tx_hash: tx.hash,
+      from: tx.from,
+      to: tx.to,
+      value: web3.utils.fromWei(tx.value, "ether"),
       block: tx.blockNumber,
     },
   });
@@ -45,7 +48,7 @@ const storeTx = async (tx) => {
   // console.log(balance);
   await User.update(
     {
-      balance,
+      balance: web3.utils.fromWei(balance, "ether"),
     },
     { where: { address: tx.to } }
   );
