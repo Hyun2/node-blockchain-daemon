@@ -31,11 +31,6 @@ const getTxs = async (txIDs) => {
   return allTransactions;
 };
 
-// const getUsers = async () => {
-//   const res = await User.findAll({ raw: true });
-//   console.log(res);
-// };
-
 const storeTx = async (tx) => {
   // console.log(tx.hash, tx.blockNumber);
   await Tx.findOrCreate({
@@ -61,5 +56,4 @@ module.exports = {
   getTxIDs,
   getTxs,
   storeTx,
-  // getUsers,
 };
