@@ -9,6 +9,15 @@ const fs = require("fs");
 const path = require("path");
 const basePath = __dirname;
 
+const main = async () => {
+  const res = await getCurrentBlockNumber();
+  console.log(res);
+};
+
+main();
+
+return;
+
 let taskRunning = false;
 
 const task = cron.schedule(
